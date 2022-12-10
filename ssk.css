@@ -4,6 +4,8 @@
     size: 27px;
     text-size-adjust: 27px;
     font-size: large;
+    font-weight: bold;
+    text-decoration-color: black;
 }
 #bookcard{
     padding: 20px;
