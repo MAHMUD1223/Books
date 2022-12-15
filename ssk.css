@@ -39,5 +39,5 @@ body{
     background-position: center;
     background-attachment: scroll,local;
     background-size: auto;
-    filter: blur(2px);
+    backdrop-filter: blur(2px);
 }
