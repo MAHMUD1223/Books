@@ -23,7 +23,9 @@
     background-color: lightblue;
     border: 15px;
     border: 0px 20%;
+    border: 25px;
     padding: 1rem;
+    margin: 3px auto;
  }
  .card > img {
     display: block;
