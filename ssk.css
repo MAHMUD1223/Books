@@ -5,14 +5,12 @@
 }
 #webicon{
     margin: auto 45%;
-    position: absolute:
     width: 7em;
-    height: 7em;
+    height: 7em
 }
 #headlines{
     font-family: cursive;
     text-align: center;
-    font-size: large;
 }
 .card {
     box-shadow: 0 15px 30px rgba(0,0,0,0.5), 0 11px 8px rgba(0,0,0,0.22);
