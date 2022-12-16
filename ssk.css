@@ -4,6 +4,9 @@
 }
 #webicon{
     margin: auto 45%;
+    border: 2px;
+    border-color: cyan;
+    border-radius: 25px;
     position: absolute:
     width: 7em;
     height: 7em;
