@@ -21,6 +21,7 @@
     box-sizing: border-box;
     transition-duration: 1s;
     background-color: lightblue;
+    border-radius: 25px;
     border: 15px;
     border: 0px 20%;
     border: 25px;
