@@ -18,6 +18,7 @@
     box-sizing: border-box;
     transition-duration: 1s;
     background-color: lightblue;
+    margin: auto 40%;
  }
  .card > img {
     display: block;
