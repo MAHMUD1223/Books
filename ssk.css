@@ -3,10 +3,9 @@
     padding: 0px;
 }
 #webicon{
-    position: center:
+    position: absolute:
     width: 5em;
-    height: 5em;
-    align-self: middle;
+    /*height: 5em;*/
 }
 #headlines{
     font-family: cursive;
