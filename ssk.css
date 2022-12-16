@@ -19,7 +19,7 @@
     transition-duration: 1s;
     background-color: lightblue;
     border: 15px;
-    border-style: dotted;
+    border: 0px 20%;
     padding: 1rem;
  }
  .card > img {
