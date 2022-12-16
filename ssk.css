@@ -18,9 +18,8 @@
     box-sizing: border-box;
     transition-duration: 1s;
     background-color: lightblue;
-    border: 2px;
+    border: 15px;
     padding: 0.5rem;
-    margin: auto 20%;
  }
  .card > img {
     display: block;
