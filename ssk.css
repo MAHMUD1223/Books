@@ -14,6 +14,7 @@
 #headlines{
     font-family: cursive;
     text-align: center;
+    font-size: x-large;
 }
 #cardplace{
     display:flex;
