@@ -7,12 +7,16 @@
     margin: auto 45%;
     width: 7em;
     height: 7em;
+    display: flex;
     border: 20px;
     border-color: blue;
 }
 #headlines{
     font-family: cursive;
     text-align: center;
+}
+#cardplace{
+    display:flex;
 }
 .card {
     box-shadow: 0 15px 30px rgba(0,0,0,0.5), 0 11px 8px rgba(0,0,0,0.22);
@@ -45,9 +49,6 @@
     width: 270px;
     background-color: lightblue;
  }
- #cardplace{
-    display:flex;
-  }
 body{
     background-image: url("https://s3.eu-central-1.amazonaws.com/uploads.mangoweb.org/shared-prod/visegradfund.org/uploads/2019/11/canva-literary-book-pages-background.jpg");
     background-repeat: no-repeat;
