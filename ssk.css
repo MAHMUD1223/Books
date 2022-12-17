@@ -44,8 +44,8 @@
     background-color: lightblue;
  }
  #cardplace{
-
- }
+    display:flex;
+  }
 body{
     background-image: url("https://s3.eu-central-1.amazonaws.com/uploads.mangoweb.org/shared-prod/visegradfund.org/uploads/2019/11/canva-literary-book-pages-background.jpg");
     background-repeat: no-repeat;
