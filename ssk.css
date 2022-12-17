@@ -6,7 +6,9 @@
 #webicon{
     margin: auto 45%;
     width: 7em;
-    height: 7em
+    height: 7em;
+    border: 2px;
+    border-color: blue;
 }
 #headlines{
     font-family: cursive;
