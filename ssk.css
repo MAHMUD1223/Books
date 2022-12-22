@@ -17,7 +17,7 @@
     font-size: 5em;
 }
 #cardplace{
-    /*display:flex;*/
+    display:flex;
     display: block;
 }
 .card {
