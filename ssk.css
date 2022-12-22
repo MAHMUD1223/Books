@@ -31,10 +31,9 @@
     border: 25px;
     padding: 1rem;
     margin: 10px 5px;
-    display: flex;
  }
  .card > img {
-    display: block;
+    display: flex;
     max-width: 100%;
     height: auto;
     margin: 0px;
