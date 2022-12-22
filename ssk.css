@@ -18,8 +18,7 @@
 }
 #cardplace{
     /*display:flex;*/
-    display: table;
-    table-layout: auto;
+    display: table-column,table-row;
 }
 .card {
     box-shadow: 0 15px 30px rgba(0,0,0,0.5), 0 11px 8px rgba(0,0,0,0.22);
