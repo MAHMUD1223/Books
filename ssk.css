@@ -17,8 +17,7 @@
     font-size: 5em;
 }
 #cardplace{
-    /*display:flex;*/
-    display: table-column,table-row;
+    display:flex;
 }
 .card {
     box-shadow: 0 15px 30px rgba(0,0,0,0.5), 0 11px 8px rgba(0,0,0,0.22);
@@ -32,9 +31,11 @@
     border: 25px;
     padding: 1rem;
     margin: 10px 5px;
+    display: flex;
  }
  .card > img {
-    display: block;
+    /*display: block;*/
+    display: flex;
     max-width: 100%;
     height: auto;
     margin: 0px;
