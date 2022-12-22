@@ -34,8 +34,7 @@
     display: flex;
  }
  .card > img {
-    /*display: block;*/
-    display: flex;
+    display: block;
     max-width: 100%;
     height: auto;
     margin: 0px;
