@@ -17,8 +17,8 @@
     font-size: 5em;
 }
 #cardplace{
-    display:flex;
-    display: block;
+    /*display:flex;*/
+    display: contents;
 }
 .card {
     box-shadow: 0 15px 30px rgba(0,0,0,0.5), 0 11px 8px rgba(0,0,0,0.22);
