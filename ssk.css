@@ -17,10 +17,7 @@
     font-size: 5em;
 }
 #cardplace{
-    display:grid;
-    grid-template-columns: auto;/*
-    grid-column: auto;
-    grid-row: auto;*/
+    display:flex;
 }
 .card {
     box-shadow: 0 15px 30px rgba(0,0,0,0.5), 0 11px 8px rgba(0,0,0,0.22);
