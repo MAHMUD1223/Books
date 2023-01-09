@@ -24,13 +24,13 @@
     width: 250px;
     box-sizing: border-box;
     transition-duration: 1s;
-    background-color: lightblue;
     border-radius: 25px;
     border: 15px;
     border: 0px 20%;
     border: 25px;
     padding: 1rem;
     margin: 10px 5px;
+    background: linear-gradient(to right, #31eb9a, #3163eb, #eb31c6, #eb1c3f);
  }
  .card > img {
     display: block;
