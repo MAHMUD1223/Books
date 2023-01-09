@@ -30,7 +30,7 @@
     border: 25px;
     padding: 1rem;
     margin: 10px 5px;
-    background: linear-gradient(to right, #31eb9a, #3163eb, #eb31c6, #eb1c3f);
+    background: linear-gradient(to right, #3163eb, #eb31c6);
  }
  .card > img {
     display: block;
