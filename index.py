@@ -40,7 +40,7 @@ class BookForm(FlaskForm):
 
 # Routes
 
-@app.route('/', methods=['GET', 'POST'])
+@app.route('/')
 def index():
     return render_template('index.html')
 
