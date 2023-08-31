@@ -1,0 +1,23 @@
+{% extends '_main.html' %}
+{% block head %}
+     
+{% endblock %}
+{% block title %}{% endblock %}
+{% block body %}
+    <br><br><br>
+    <table border="1" cellspacing="0">
+        <caption><h1>IMAGES</h1></caption>
+        <tr>
+            <th>SL. No</th>
+            <th>IMAGE</th>
+            <th>VIEW</th>
+        </tr>
+        <tr>
+            {% for i in asset %}
+                <td>{{loop.index}}</td>
+                <td><img src="/assets/{{ i.id }}" alt="{{ i.name }}"></td>
+                <td><a href="/assets/{{ i.id }}">See</a></td>
+            {% endfor %}
+        </tr>
+    </table>
+{% endblock %}

@@ -1,0 +1,21 @@
+{% extends '_main.html' %}
+{% block head %}
+     <style>
+        form{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+     </style>
+{% endblock %}
+{% block title %}Add Img{% endblock %}
+{% block body %}
+     <form action="{{ url_for('insert_asset') }}" method="post" enctype="multipart/form-data">
+        {{ form.csrf_token }}
+        {{ form.hidden_tag() }}
+        {{ form.password }}
+        {{ form.img }}
+        {{ form.submit }}
+     </form>
+{% endblock %}
