@@ -109,6 +109,22 @@ def assets(id):
     asset = Assets_img.query.get_or_404(id)
     return Response(asset.img, mimetype=asset.mimetype)
 
+@app.route('/book/insert', methods=['GET', 'POST'])
+def insert_book():
+    form = BookForm()
+    if request.method == 'POST' and form.validate_on_submit():
+        if form.password.data == data['pswd']:
+            bookpdf = form.bookpdf.data.read()
+            new_book = Books(name=form.name.data, bookpdf=bookpdf, description=form.description.data)
+            db.session.add(new_book)
+            db.session.commit()
+            flash('Book successfully added!', category='success')
+            return redirect(url_for('index'))
+        else:
+            flash('Hmmmmmm, it seems like you entered something worng here', category="danger")
+            return redirect(url_for('insert_book'))
+    return render_template('insert_book.html', form=form)
+
 
 if __name__=="__main__":
     app.run(debug=True)
