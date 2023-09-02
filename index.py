@@ -9,6 +9,7 @@ from wtforms import StringField, SubmitField, TextAreaField, PasswordField
 from flask_wtf.file import FileField, FileRequired, FileAllowed
 from wtforms.validators import DataRequired, Length, ValidationError
 from werkzeug.utils import secure_filename
+from pdf2image import convert_from_bytes
 
 app = Flask(__name__)
 with open('config.json', 'r') as c:
@@ -75,11 +76,14 @@ def urls():
             pass
     return f'{link}'
 
+@app.route('/home')
+@app.route('/index')
+@app.route('/index.html')
+@app.route('/books')
 @app.route('/')
 def index():
-    flash('hello worlder', category='warning')
-    flash('Welcome!', category="success")
-    return render_template('index.html')
+    book=Books.query.all()
+    return render_template('index.html', book=book)
 
 @app.route('/assets/insert', methods=['GET', 'POST'])
 def insert_asset():
@@ -124,6 +128,23 @@ def insert_book():
             flash('Hmmmmmm, it seems like you entered something worng here', category="danger")
             return redirect(url_for('insert_book'))
     return render_template('insert_book.html', form=form)
+
+
+@app.route('/book/<int:id>')
+def book(id):
+    book = Books.query.filter_by(id=id).first_or_404()
+    image = convert_from_bytes(book.bookpdf, fmt='jpeg')
+    return render_template('book.html', book=book, image=image)
+
+
+@app.route('/about')
+def about():
+    return render_template('about.html')
+    
+
+@app.errorhandler(404)
+def page_not_found(e):
+    return render_template("404.html"), 404
 
 
 if __name__=="__main__":

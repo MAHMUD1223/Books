@@ -5,4 +5,9 @@
 {% block title %}Home-mbook{% endblock %}
 {% block body %}
     <h1 align="center">Hello welcome to my page</h1>
+    {% for i in book %}
+        <div class="{{loop.index}}">
+            <h3>{{ i.name }}</h3>
+        </div>
+    {% endfor %}
 {% endblock %}
