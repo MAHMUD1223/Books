@@ -1,0 +1,23 @@
+{% extends '_main.html' %}
+{% block head %}
+    
+{% endblock %}
+{% block title %}{{ book.name }}{% endblock %}
+{% block body %}
+    <h3 align="center">{{ book.name }}</h3>
+    <p align="center">{{ book.description }}</p>
+    <div id="flipbook">
+        {% for image in images %}
+        {{loop.index}}
+            <div><img src="{{ image }}"></div>
+        {% endfor %}
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/turn.js/4.0.2/turn.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $("#flipbook").turn();
+        });
+    </script>
+
+    
+{% endblock %}

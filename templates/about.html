@@ -1,0 +1,16 @@
+{% extends '_main.html' %}
+{% block head %}
+    <style>
+        #logo-about {
+            border: 2px solid var(--bs-warning-bg-subtle);
+            border-radius: 50%;
+            position: absolute;
+            left: 40%;
+            padding: 10px;
+        }
+    </style>
+{% endblock %}
+{% block title %}ABOUT{% endblock %}
+{% block body %}
+    <img height="200" width="200" id="logo-about" align="center" src="/assets/1" alt="logo.png">
+{% endblock %}
