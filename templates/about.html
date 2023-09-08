@@ -1,16 +1,96 @@
 {% extends '_main.html' %}
 {% block head %}
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Bungee+Spice&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Alkatra&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
+        body{
+            backdrop-filter: blur(20px);
+        }
         #logo-about {
-            border: 2px solid var(--bs-warning-bg-subtle);
+            border: 2px solid var(--bs-danger-bg-subtle);
             border-radius: 50%;
-            position: absolute;
-            left: 40%;
+            margin-left: 40%;
             padding: 10px;
+        }
+        .text {
+            margin-left: 10%;
+            margin-right: 10%;
+            font-size: 20px;
+            text-align: justify;
+        }
+        .ab-title {
+            font-family: 'Bungee Spice', cursive;
+            font-size: 40px;
+            text-align: center;
+        }
+        .ab-info {
+            font-family: 'Alkatra', cursive;
+            font-size: 25px;
+        }
+        .ab-end{
+            font-family: 'Great Vibes', cursive;
+            font-size: 30px;
         }
     </style>
 {% endblock %}
 {% block title %}ABOUT{% endblock %}
 {% block body %}
     <img height="200" width="200" id="logo-about" align="center" src="/assets/1" alt="logo.png">
+    <br><br><br>
+    <div class="text">
+
+        <h1 class="ab-title" align="center">About Our Rare Book Reading Website</h1>
+        <p class="ab-info" align="center">
+            Welcome to our unique online platform dedicated to the exploration and enjoyment of rare books. We are passionate about preserving and sharing these literary treasures, and our mission is to make the world of rare books accessible to all, regardless of geographical location or financial constraints.
+        </p> <br><br>
+        <h1 class="ab-title" align="center">Our Story</h1>
+        <p class="ab-info" align="center">
+            Our journey began with a shared love for the written word and a deep appreciation for the history and culture encapsulated within rare books. We recognized that while these literary gems hold immense value, many people around the world have limited opportunities to experience them in person due to their rarity and fragility.
+            Driven by a desire to bridge this gap, we embarked on a mission to create a digital haven for rare book enthusiasts and scholars alike. Our team of dedicated book lovers, technologists, and historians collaborated to build a platform that would make these invaluable works of art and knowledge readily available to everyone.
+        </p> <br><br>
+        <h1 class="ab-title" align="center">Our Mission</h1>
+        <div class="ab-info">Our mission is threefold:</div>
+        <p class="ab-info" align="center">
+            <b>Preservation:</b> We are committed to preserving the world's rare books for future generations. By digitizing these works, we help protect them from the ravages of time, ensuring that their wisdom endures.
+        </p> <br>
+        <p class="ab-info" align="center">
+            <b>Accessibility:</b> We believe that knowledge should be accessible to all, regardless of economic circumstances or geographic location. Our platform provides a virtual library where anyone can explore rare books from different eras and regions.
+        </p> <br>
+        <p class="ab-info" align="center">
+            <b>Education:</b> We are passionate about fostering a deeper understanding of history, culture, and literature through rare books. Our platform serves as an educational resource, enabling students, researchers, and enthusiasts to delve into the past and uncover hidden gems of knowledge.
+        </p> <br><br>
+        
+        <h1 class="ab-title" align="center">What You'll Find Here</h1>
+        <p class="ab-info" align="center">
+            Our website features a vast collection of rare books spanning various genres, time periods, and cultures. Whether you're interested in ancient manuscripts, first editions of classic novels, or historical documents, you'll discover a rich tapestry of literary history at your fingertips.
+        </p> <br>
+        <h2 class="ab-title">Here are some key features of our platform:</h2>
+        <br>
+        <p class="ab-info" align="center">
+            <b>Digitized Rare Books:</b> We've painstakingly digitized rare books from our extensive collection, allowing you to read them online, page by page, as if you were holding the original in your hands.
+        </p> <br>
+        <p class="ab-info" align="center">
+            <b>Search and Browse:</b> Our user-friendly search and browsing tools make it easy to explore our collection by author, title, genre, or historical period.
+        </p> <br>
+        <p class="ab-info" align="center">
+            <b>Educational Resources:</b> Dive deeper into the context and significance of these rare books through our curated articles, videos, and expert commentary.
+        </p> <br>
+        <p class="ab-info" align="center">
+            <b>Engagement:</b> Connect with fellow rare book enthusiasts, scholars, and collectors in our vibrant online community. Share your insights, participate in discussions, and collaborate on research projects.
+        </p> <br><br>
+        <div class="ab-info">
+            Join Us on this Journey!!! <br>
+            We invite you to join us on this exciting journey of exploration, preservation, and education. Whether you're a seasoned rare book collector or a curious novice, our website is your gateway to a world of literary treasures waiting to be discovered.
+            Thank you for being a part of our mission to make rare books more accessible and to celebrate the beauty and knowledge they contain. Together, we can ensure that these literary marvels continue to inspire and enlighten generations to come.
+            <br> <br>
+            Happy reading!
+        </div>
+        <br><br>
+        <div class="ab-end">
+            Sincerely, <br>
+            Mahmud,<br>
+            Founder, MBOOK
+        </div>
+    </div>
 {% endblock %}
