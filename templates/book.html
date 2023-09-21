@@ -1,21 +1,40 @@
 {% extends '_main.html' %}
 {% block head %}
-    
+    <style>
+        .flipbook {
+            width: 800px;
+            height: 400px;
+        }
+
+        .page {
+            width: 100%;
+            height: 100%;
+        }
+    </style>
 {% endblock %}
 {% block title %}{{ book.name }}{% endblock %}
 {% block body %}
     <h3 align="center">{{ book.name }}</h3>
     <p align="center">{{ book.description }}</p>
-    <div id="flipbook">
-        {% for image in images %}
-        {{loop.index}}
-            <div><img src="{{ image }}"></div>
+    <div class="flipbook">
+        {% for img in image %}
+        <div class="page">
+            <img src="data:image/jpeg;base64,{{ img }}" alt="Page {{ loop.index }}" loading="lazy">
+        </div>
         {% endfor %}
     </div>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/turn.js/4.0.2/turn.min.js"></script>
+    <!--<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/turn.js/4.0.2/turn.min.css">
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/turn.js/4.0.2/turn.min.js"></script>
+    -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/turn.js/3/turn.min.js" integrity="sha512-rFun1mEMg3sNDcSjeGP35cLIycsS+og/QtN6WWnoSviHU9ykMLNQp7D1uuG1AzTV2w0VmyFVpszi2QJwiVW6oQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script>
+        //$(document).ready(function() {
+        //    $("#flipbook").turn();
+        //});
         $(document).ready(function() {
-            $("#flipbook").turn();
+            $(".flipbook").turn({
+                autoCenter: true
+            });
         });
     </script>
 

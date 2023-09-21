@@ -10,6 +10,8 @@ from flask_wtf.file import FileField, FileRequired, FileAllowed
 from wtforms.validators import DataRequired, Length, ValidationError
 from werkzeug.utils import secure_filename
 from pdf2image import convert_from_bytes
+import io
+import base64
 
 app = Flask(__name__)
 with open('config.json', 'r') as c:
@@ -65,6 +67,7 @@ class AssetForm(FlaskForm):
 # Routes
 
 @app.route('/urls')
+@app.route('/_/')
 def urls():
     import index
     alldir = dir(index)
@@ -132,9 +135,21 @@ def insert_book():
 
 @app.route('/book/<int:id>')
 def book(id):
-    book = Books.query.filter_by(id=id).first_or_404()
-    image = convert_from_bytes(book.bookpdf, fmt='jpeg')
-    return render_template('book.html', book=book, image=image)
+    pdf = Books.query.filter_by(id=id).first_or_404()
+    pdf_data = pdf.bookpdf
+
+    if pdf_data:
+        images = convert_from_bytes(pdf_data, size=(800, None), dpi=200)
+        
+        # Convert the images to base64-encoded strings
+        image_strings = []
+        for image in images:
+            buffered = io.BytesIO()
+            image.save(buffered, format="JPEG")
+            image_string = base64.b64encode(buffered.getvalue()).decode('utf-8')
+            image_strings.append(image_string)
+
+    return render_template('book.html', book=pdf, image=image_strings)
 
 
 @app.route('/about')
