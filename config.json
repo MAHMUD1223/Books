@@ -1,4 +1,4 @@
 {
-    "uri":"postgresql://MAHMUD1223:Es2I4fSFWJLD@ep-plain-sky-804803.us-east-2.aws.neon.tech/book",
+    "uri":"postgresql://MAHMUD1223:Es2I4fSFWJLD@ep-plain-sky-804803.us-east-2.aws.neon.tech/book?sslmod=require",
     "pswd":"nopassword"
 }
