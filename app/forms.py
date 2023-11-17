@@ -3,6 +3,7 @@ from wtforms import StringField, SubmitField, TextAreaField, PasswordField
 from flask_wtf.file import FileField, FileRequired, FileAllowed
 from wtforms.validators import DataRequired, Length, ValidationError
 
+
 class BookForm(FlaskForm):
     book_name = StringField('name', validators=[DataRequired()])
     author = StringField('author', validators=[DataRequired()])

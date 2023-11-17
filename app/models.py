@@ -1,5 +1,6 @@
 from . import db
 
+
 class Books(db.Model):
     __tablename__ = 'books'
     id = db.Column(db.Integer, primary_key=True)
@@ -8,7 +9,7 @@ class Books(db.Model):
     description = db.Column(db.String(500), nullable=False)
     book = db.Column(db.Text, nullable=False)
     page = db.Column(db.Integer, nullable=False)
-    mime_type = db.Column(db.String(80), nullable=False)
-    
+    # mime_type = db.Column(db.String(80), nullable=False)
+
     def __repr__(self):
         return '<Book %r>' % self.book_name

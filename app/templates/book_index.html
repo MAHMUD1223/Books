@@ -1,0 +1,11 @@
+{% extends '_main.html' %}
+{% block head %}
+    
+{% endblock %}
+{% block title %}Books{% endblock %}
+{% block body %}
+    <h1>Books</h1>
+    {% for i in books %}
+        <h3>{{ i.book_name }}</h3>
+    {% endfor %}
+{% endblock %}
