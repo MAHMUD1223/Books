@@ -7,5 +7,6 @@
     <h1>Books</h1>
     {% for i in books %}
         <h3>{{ i.book_name }}</h3>
+        <a href="/read/{{ i.book_name }}">go</a>
     {% endfor %}
 {% endblock %}

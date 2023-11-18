@@ -75,3 +75,14 @@ def book_insert():
 def book():
     books = Books.query.all()
     return render_template('book_index.html', books=books)
+
+@app.route('/page/<bookname>/<page>')
+def page(bookname, page):
+    book_page = Books.query.filter_by(book_name=bookname).first_or_404().book.split(",")[int(page)]
+    img_data = base64.b64decode(book_page)
+    return Response(img_data, mimetype='image/png')
+
+@app.route('/read/<bookname>')
+def read(bookname):
+    book=Books.query.filter_by(book_name=bookname).first_or_404()
+    return render_template("read.html", book=book)
