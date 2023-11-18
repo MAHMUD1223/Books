@@ -1,7 +1,7 @@
 # Mbook
 ## Status
 ![Static Badge](https://img.shields.io/badge/Building-red?style=plastic&label=Status&labelColor=grey&color=green)
-### Info
+### Used tech on this repo
 ![Static Badge](https://img.shields.io/badge/python-blue?style=plastic&logo=python&logoColor=yellow)
 ![Static Badge](https://img.shields.io/badge/flask-black?style=plastic&logo=flask&logoColor=white)
 ![Static Badge](https://img.shields.io/badge/vercel-black?style=plastic&logo=vercel&logoColor=white)

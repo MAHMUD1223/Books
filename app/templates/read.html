@@ -1,0 +1,16 @@
+{% extends '_main.html' %}
+{% block head %}
+    
+{% endblock %}
+{% block title %}{{ book.book_name }}{% endblock %}
+{% block body %}
+    <div align="center">
+        <h1>Book Name : {{ book.book_name }}</h1>
+        <h2> Author Name : {{ book.author }} </h2>
+    </div>
+    <div>
+        {% for i in range(book.page) %}
+            <img src="/page/{{ book.book_name }}/{{ i }}" alt="{{ book.name }}'s page {{ i+1 }}" srcset=""> <br>
+        {% endfor %}
+    </div>
+{% endblock %}
