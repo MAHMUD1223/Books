@@ -73,7 +73,7 @@ def book_insert():
 
 @app.route('/book')
 def book():
-    books = Books.query.all()
+    books = Books.query.with_entities(Books.book_name, Books.author).all()
     return render_template('book_index.html', books=books)
 
 @app.route('/page/<bookname>/<page>')
