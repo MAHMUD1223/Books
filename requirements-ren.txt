@@ -15,7 +15,6 @@ packaging==23.2
 psycopg2-binary==2.9.9
 pycodestyle==2.10.0
 PyMuPDF==1.22.5
-PyMuPDFb==1.23.6
 SQLAlchemy==2.0.23
 tomli==2.0.1
 typing_extensions==4.8.0
