@@ -8,9 +8,25 @@
         <h1>Book Name : {{ book.book_name }}</h1>
         <h2> Author Name : {{ book.author }} </h2>
     </div>
-    <div>
+    <div align="center">
         {% for i in range(book.page) %}
-            <img src="/page/{{ book.book_name }}/{{ i }}" alt="{{ book.name }}'s page {{ i+1 }}" srcset=""> <br>
+            <img data-src="/page/{{ book.book_name }}/{{ i }}" alt="{{ book.name }}'s page {{ i+1 }}" class="lazy-load" srcset=""> <br>
         {% endfor %}
     </div>
+    <script>
+        $(document).ready(function() {
+            function lazyLoad() {
+                $('.lazy-load').each(function() {
+                    if ($(this).offset().top < $(window).scrollTop() + $(window).height() + 100) {
+                        $(this).attr('src', $(this).data('src')).removeClass('lazy-load');
+                    }
+                });
+            }
+        
+            $(window).on('scroll resize', lazyLoad);
+        
+            // Initial load
+            lazyLoad();
+        });
+    </script>
 {% endblock %}

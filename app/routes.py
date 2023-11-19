@@ -84,5 +84,5 @@ def page(bookname, page):
 
 @app.route('/read/<bookname>')
 def read(bookname):
-    book=Books.query.filter_by(book_name=bookname).first_or_404()
+    book=Books.query.filter_by(book_name=bookname).with_entities(Books.book_name, Books.author, Books.page).first_or_404()
     return render_template("read.html", book=book)
