@@ -2,7 +2,7 @@ alembic==1.12.1
 autopep8==2.0.4
 blinker==1.6.3
 click==8.1.7
-Flask==3.0.0
+Flask==2.2.5
 Flask-Migrate==4.0.5
 Flask-SQLAlchemy==3.1.1
 Flask-WTF==1.2.1
