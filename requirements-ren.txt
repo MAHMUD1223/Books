@@ -17,6 +17,6 @@ pycodestyle==2.10.0
 PyMuPDF==1.22.5
 SQLAlchemy==2.0.23
 tomli==2.0.1
-typing_extensions==4.8.0
+typing_extensions==4.7.1
 Werkzeug==3.0.1
 WTForms==3.1.1
