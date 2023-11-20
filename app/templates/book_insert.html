@@ -46,7 +46,7 @@
 {% endblock %}
 {% block title %}Add Book{% endblock %}
 {% block body %}
-<form action="{{ url_for('book_insert' ) }}" method="POST" enctype="multipart/form-data">
+<form id="uploadForm" action="{{ url_for('book_insert' ) }}" method="POST" enctype="multipart/form-data">
     {{ form.hidden_tag() }}
     {{ form.book_name(placeholder="Book Name") }}
     {{ form.author(placeholder="Author Name") }}
@@ -58,4 +58,36 @@
         <input id="reset" type="reset" value="Reset">
     </div>
 </form>
+<div id="progressBar">
+  <div id="progressStatus"></div>
+</div>
+<script>
+    $(document).ready(function() {
+        $('#uploadForm').submit(function(e) {
+          e.preventDefault();
+          let formData = new FormData(this);
+    
+          $.ajax({
+            url: '{{url_for("book_insert")}}',
+            type: 'POST',
+            data: formData,
+            contentType: false,
+            processData: false,
+            xhr: function() {
+              let xhr = new window.XMLHttpRequest();
+              xhr.upload.addEventListener('progress', function(e) {
+                if (e.lengthComputable) {
+                  let percentage = Math.round((e.loaded / e.total) * 100);
+                  $('#progressStatus').css('width', percentage + '%').html(percentage + '%');
+                }
+              });
+              return xhr;
+            },
+            success: function(response) {
+              console.log('Upload completed!');
+            }
+          });
+        });
+      });
+</script>
 {% endblock %}

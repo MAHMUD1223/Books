@@ -4,23 +4,13 @@ import io
 import fitz  # it's from pymupdf
 import base64
 import tempfile
-from . import app, db
+from . import app, db, bacside
 from .forms import BookForm
 from .models import Books
 from flask import url_for, render_template, flash, request, redirect, Response
 
 
-@app.route('/_/')
-def urls():
-    from app import routes as index
-    alldir = dir(index)
-    link = ""
-    for i in alldir:
-        try:
-            link += f'<a href=\"{url_for(i)}\">{i}</a> <br>'
-        except werkzeug.routing.exceptions.BuildError:
-            pass
-    return f'{link}'
+bacside.Backside()
 
 
 @app.route('/')
@@ -76,13 +66,20 @@ def book():
     books = Books.query.with_entities(Books.book_name, Books.author).all()
     return render_template('book_index.html', books=books)
 
+
 @app.route('/page/<bookname>/<page>')
 def page(bookname, page):
-    book_page = Books.query.filter_by(book_name=bookname).first_or_404().book.split(",")[int(page)]
+    book_page = Books.query.filter_by(
+        book_name=bookname).first_or_404().book.split(",")[int(page)]
     img_data = base64.b64decode(book_page)
     return Response(img_data, mimetype='image/png')
 
+
 @app.route('/read/<bookname>')
 def read(bookname):
-    book=Books.query.filter_by(book_name=bookname).with_entities(Books.book_name, Books.author, Books.page).first_or_404()
+    book = Books.query.filter_by(
+        book_name=bookname).with_entities(
+        Books.book_name,
+        Books.author,
+        Books.page).first_or_404()
     return render_template("read.html", book=book)
