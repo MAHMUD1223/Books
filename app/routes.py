@@ -4,13 +4,13 @@ import io
 import fitz  # it's from pymupdf
 import base64
 import tempfile
-from . import app, db, bacside
+from . import app, db, backside
 from .forms import BookForm
 from .models import Books
 from flask import url_for, render_template, flash, request, redirect, Response
 
 
-bacside.Backside()
+backside.Backside()
 
 
 @app.route('/')
