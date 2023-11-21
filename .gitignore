@@ -4,3 +4,7 @@ __pychache__
 .env
 *.tmp
 env
+.pythonlibs
+poetry.lock
+pyproject.toml
+.replit

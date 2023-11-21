@@ -9,7 +9,13 @@ class Books(db.Model):
     description = db.Column(db.String(500), nullable=False)
     book = db.Column(db.Text, nullable=False)
     page = db.Column(db.Integer, nullable=False)
-    # mime_type = db.Column(db.String(80), nullable=False)
-
+    
     def __repr__(self):
         return '<Book %r>' % self.book_name
+        
+    def __init__(self, book_name, author, description, book, page):
+        self.book_name = book_name
+        self.author = author
+        self.description = description
+        self.book = book
+        self.page = page

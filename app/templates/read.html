@@ -10,7 +10,7 @@
     </div>
     <div align="center">
         {% for i in range(book.page) %}
-            <img data-src="/page/{{ book.book_name }}/{{ i }}" alt="{{ book.name }}'s page {{ i+1 }}" class="lazy-load" srcset=""> <br>
+            <img data-src="/page/{{ book.id }}/{{ i }}" alt="{{ book.name }}'s page {{ i+1 }}" class="lazy-load" srcset=""> <br>
         {% endfor %}
     </div>
     <script>
