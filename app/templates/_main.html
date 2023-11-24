@@ -12,6 +12,28 @@
             margin: 0;
             padding: 0;
             font-family: 'Belanosima', sans-serif;
+            color: white;
+        }
+        body{
+            background: black;
+        }
+        nav{
+            display: flex;
+            justify-content: space-between;
+            padding: 0.6rem 3rem 0.6rem 2rem;
+            background: linear-gradient(to right, cyan, steelblue, aqua);
+        }
+        nav .nav-img{
+            width: 5rem;
+            height: 5rem;
+            border-radius: 25px;
+        }
+        nav .nav-items{
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+            font-size: 1.2rem;
+            text-decoration: none;
         }
         {% include "bs-color.css" %}
     </style>
@@ -19,7 +41,19 @@
     <title>MBook - {% block title %}{% endblock %}</title>
 </head>
 <body>
+    <nav>
+        <!-- we will go local later -->
+        <img class="nav-img" src="https://i.ibb.co/tXM8CVQ/jx-MP1671088070-removebg-preview.png">
+        <div class="nav-items">
+            <a href="/">Home</a>
+            <a href="{{url_for('book')}}">Books</a>
+            <a href="/about">About</a>
+            <a href="/contact">Contact</a>
+        </div>
+    </nav>
     {% include "flash.html" %}
-{% block body %} {% endblock %}
+    <main>
+        {% block body %} {% endblock %}
+    </main>
 </body>
 </html>
