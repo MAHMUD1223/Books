@@ -3,7 +3,7 @@ import io
 import os
 import tempfile
 
-#import fitz  # it's from pymupdf
+import fitz  # it's from pymupdf
 from flask import Response, flash, redirect, render_template, request, url_for
 
 from . import app, backside, db
