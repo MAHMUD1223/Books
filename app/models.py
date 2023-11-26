@@ -13,9 +13,3 @@ class Books(db.Model):
     def __repr__(self):
         return '<Book %r>' % self.book_name
         
-    def __init__(self, book_name, author, description, book, page):
-        self.book_name = book_name
-        self.author = author
-        self.description = description
-        self.book = book
-        self.page = page

@@ -18,7 +18,6 @@
         padding: 10px;
         border: 2px solid var(--bs-primary);
         border-radius: 10px;
-        background: var(--bs-gray-500);
     }
     form #btn{
         display: flex;
@@ -43,15 +42,10 @@
     form #submit:hover{
         background-color: var(--bs-success-bg-subtle);
     }
-    #progressStatus{
-        width: 0;
-        background-color: red;
-    }
  </style>
 {% endblock %}
 {% block title %}Add Book{% endblock %}
 {% block body %}
-<h1 align="center">Insert a Book</h1>
 <form id="uploadForm" action="{{ url_for('book_insert' ) }}" method="POST" enctype="multipart/form-data">
     {{ form.hidden_tag() }}
     {{ form.book_name(placeholder="Book Name") }}
@@ -64,7 +58,8 @@
         <input id="reset" type="reset" value="Reset">
     </div>
 </form>
-<div align="center" id="progressBar">
+<!--
+<div id="progressBar">
   <div id="progressStatus"></div>
 </div>
 <script>
@@ -88,12 +83,12 @@
                 }
               });
               return xhr;
-            },
-            success: function(response) {
-              console.log('Upload completed!');
-            }
+            }//,
+            //success: function(response) {
+            //  console.log('Upload completed!');
+            //}
           });
         });
       });
-</script>
+</script> -->
 {% endblock %}
