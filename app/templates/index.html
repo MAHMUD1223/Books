@@ -1,6 +1,21 @@
-{% extends "_main.html" %}
-{% block head %}{% endblock %}
-{% block title %}Home{% endblock %}
+{% extends '_main.html' %}
+{% block head %}
+    <style>
+        #book{
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-gap: 1rem;
+        }
+    </style>
+{% endblock %}
+{% block title %}Books{% endblock %}
 {% block body %}
-<h1 align="center">Hello</h1>
+    <h1>Books</h1>
+    <div id="book" align="center">
+    {% for i in books %}
+        <h3>{{ i.book_name }}</h3>
+        <img src="/page/{{i.id}}/0" alt="" srcset="">
+        <a href="/read/{{i.id}}">go</a>
+    {% endfor %}
+    </div>
 {% endblock %}

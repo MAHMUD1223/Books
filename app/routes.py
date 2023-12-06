@@ -15,7 +15,8 @@ backside.Backside()
 
 @app.route('/')
 def index():
-    return render_template("index.html")
+    books = Books.query.with_entities(Books.id, Books.book_name, Books.author).all()
+    return render_template('index.html', books=books)
 
 
 @app.route('/book/insert', methods=['GET', 'POST'])
@@ -59,11 +60,6 @@ def book_insert():
     return render_template('book_insert.html', form=form)
 
 
-@app.route('/book')
-def book():
-    books = Books.query.with_entities(Books.id, Books.book_name, Books.author).all()
-    return render_template('book_index.html', books=books)
-
 
 @app.route('/page/<id>/<page>')
 def page(id, page):
@@ -76,3 +72,9 @@ def page(id, page):
 def read(id):
     book = Books.query.filter_by(id=id).with_entities(Books.id ,Books.book_name, Books.author, Books.page).first_or_404()
     return render_template("read.html", book=book)
+
+
+@app.route('/about')
+def about():
+    flash("test", category='success')
+    return render_template("about.html")

@@ -16,6 +16,7 @@
     form input, form textarea{
         width: 100%;
         padding: 10px;
+        background-color: var(--bs-gray-500);
         border: 2px solid var(--bs-primary);
         border-radius: 10px;
     }
@@ -52,43 +53,10 @@
     {{ form.author(placeholder="Author Name") }}
     {{ form.password(placeholder="Password") }}
     {{ form.bookpdf }}
-    {{ form.description(placeholder="Description of the book ............", rows="7") }}
+    {{ form.description(placeholder="Description of the book ... ... ...", rows="7") }}
     <div id="btn">
         {{ form.submit }}
         <input id="reset" type="reset" value="Reset">
     </div>
 </form>
-<!--
-<div id="progressBar">
-  <div id="progressStatus"></div>
-</div>
-<script>
-    $(document).ready(function() {
-        $('#uploadForm').submit(function(e) {
-          e.preventDefault();
-          let formData = new FormData(this);
-    
-          $.ajax({
-            url: '{{url_for("book_insert")}}',
-            type: 'POST',
-            data: formData,
-            contentType: false,
-            processData: false,
-            xhr: function() {
-              let xhr = new window.XMLHttpRequest();
-              xhr.upload.addEventListener('progress', function(e) {
-                if (e.lengthComputable) {
-                  let percentage = Math.round((e.loaded / e.total) * 100);
-                  $('#progressStatus').css('width', percentage + '%').html(percentage + '%');
-                }
-              });
-              return xhr;
-            }//,
-            //success: function(response) {
-            //  console.log('Upload completed!');
-            //}
-          });
-        });
-      });
-</script> -->
 {% endblock %}
