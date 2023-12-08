@@ -56,7 +56,7 @@ def book_insert():
         db.session.add(new_book)
         db.session.commit()
         flash(f"Book:{book_name} added successfully", category="success")
-        return redirect(url_for('book'))
+        return redirect(url_for('index'))
     return render_template('book_insert.html', form=form)
 
 

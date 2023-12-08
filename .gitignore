@@ -8,3 +8,4 @@ env
 poetry.lock
 pyproject.toml
 .replit
+*.tar.gz

@@ -46,13 +46,13 @@
         nav .nav-items a:active{
             color: white;
         }
-        footer{
+        /*footer{
             position: absolute;
             bottom: 0;
             width: 100%;
             padding: 0.6rem 3rem;
             background-color: var(--bs-gray-400);
-        }
+        }*/
     </style>
     {% block head %} {% endblock %}
     <title>MBook - {% block title %}{% endblock %}</title>
@@ -68,11 +68,6 @@
         </div>
     </nav>
     {% include "flash.html" %}
-    <main>
         {% block body %} {% endblock %}
-    </main>
-    <footer>
-        <h1>Thus we are done</h1>
-    </footer>
 </body>
 </html>
