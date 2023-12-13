@@ -16,9 +16,15 @@
             color: white;
             /*border: 1px solid red;*/
         }
+        html{
+            scroll-behavior: smooth;
+        }
+        img{
+            user-select: none;
+        }
         body{
-            background: black;
-            overflow: hidden;
+            background-color: black;
+            color: white;
         }
         nav{
             display: flex;
@@ -46,13 +52,6 @@
         nav .nav-items a:active{
             color: white;
         }
-        /*footer{
-            position: absolute;
-            bottom: 0;
-            width: 100%;
-            padding: 0.6rem 3rem;
-            background-color: var(--bs-gray-400);
-        }*/
     </style>
     {% block head %} {% endblock %}
     <title>MBook - {% block title %}{% endblock %}</title>
