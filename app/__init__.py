@@ -2,6 +2,7 @@ import secrets
 import json
 
 from flask import Flask
+from flask_minify import minify
 from flask_migrate import Migrate
 from flask_sqlalchemy import SQLAlchemy
 
@@ -14,5 +15,6 @@ app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 app.config['SECRET_KEY'] = secrets.token_hex(16)
 db = SQLAlchemy(app)
 migrate = Migrate(app, db)
+minify(app=app, html=True, js=True, cssless=True, static=True)
 
 from . import forms, models, routes

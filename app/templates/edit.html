@@ -1,0 +1,61 @@
+{% extends '_main.html' %}
+{% block head %}
+    <style>
+        form{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            border: 5px solid var(--bs-danger-border-subtle);
+            border-radius: 20px;
+            padding: 20px;
+            margin: 0 30% 0 30%;
+        }
+        form input, form textarea{
+            width: 100%;
+            padding: 10px;
+            background-color: var(--bs-gray-500);
+            border: 2px solid var(--bs-primary);
+            border-radius: 10px;
+        }
+        form #btn{
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-self: center;
+            gap: 10px;
+        }
+        form #reset{
+            padding: 10px;
+            border: 2px solid var(--bs-danger-border-subtle);
+            background-color: var(--bs-danger);
+        }
+        form #reset:hover{
+            background-color: var(--bs-danger-bg-subtle);
+        }
+        form #submit{
+            padding: 10px;
+            border: 2px solid var(--bs-success-border-subtle);
+            background-color: var(--bs-success);
+        }
+        form #submit:hover{
+            background-color: var(--bs-success-bg-subtle);
+        }
+    </style>
+{% endblock %}
+{% block title %}{% endblock %}
+{% block body %}
+<form id="uploadForm" action="{{ url_for('edit_done') }}" method="POST">
+    {{ form.hidden_tag() }}
+    {{ form.id(value=book.id, style="display:none") }}
+    {{ form.book_name(placeholder="Book Name", value=book.book_name ) }}
+    {{ form.author(placeholder="Author Name", value=book.author) }}
+    {{ form.password(placeholder="Password") }}
+    {{ form.description(placeholder="Description of the book ... ... ...", rows="7", value=book.description ) }}
+    <div id="btn">
+        {{ form.submit }}
+        <input id="reset" type="reset" value="Reset">
+    </div>
+</form>
+{% endblock %}

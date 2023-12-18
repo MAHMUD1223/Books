@@ -6,8 +6,8 @@ import tempfile
 import fitz  # it's from pymupdf
 from flask import Response, flash, redirect, render_template, request, url_for
 
-from . import app, backside, db
-from .forms import BookForm
+from . import app, backside, db, data
+from .forms import BookForm, BookEdit
 from .models import Books
 
 backside.Backside()
@@ -22,7 +22,7 @@ def index():
 @app.route('/book/insert', methods=['GET', 'POST'])
 def book_insert():
     form = BookForm()
-    if request.method == "POST" and form.validate_on_submit() and form.password.data == "nopassword":
+    if request.method == "POST" and form.validate_on_submit() and form.password.data == data['pswd']:
         book_name = form.book_name.data
         author = form.author.data
         pdf_data = form.bookpdf.data.read()
@@ -71,7 +71,26 @@ def page(id, page):
 @app.route('/read/<id>')
 def read(id):
     book = Books.query.filter_by(id=id).with_entities(Books.id ,Books.book_name, Books.author, Books.page).first_or_404()
-    return render_template("read.html", book=book)
+    return render_template("read2.html", book=book)
+
+
+@app.route('/book/edit/<id>')
+def edit(id):
+    form = BookEdit()
+    book = Books.query.filter_by(id=id).with_entities(Books.id, Books.book_name, Books.author, Books.description).first_or_404()
+    return render_template("edit.html", form=form, book=book)
+
+@app.route('/book/edit/done', methods=['POST'])
+def edit_done():
+    form = BookEdit()
+    if form.validate_on_submit() and form.password.data == data['pswd']:
+        book = Books.query.filter_by(id=form.id.data).first_or_404()
+        book.book_name = form.book_name.data
+        book.author = form.author.data
+        book.description = form.description.data
+        db.session.commit()
+        flash(f"Book:{book.book_name} edited successfully", category="success")
+        return redirect(url_for('index'))
 
 
 @app.route('/about')
