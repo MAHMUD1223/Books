@@ -1,16 +1,41 @@
 {% extends '_main.html' %}
 {% block head %}
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Fredericka+the+Great&display=swap');
+        .books{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            gap: 2rem;
+        }
+        .books img{
+            width: 20rem;
+            height: 30rem;
+            border-radius: 10px;
+        }
+        .books .book{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .books .book button{
+            padding: 0.5rem;
+            border-radius: 10px;
+            background-color: var(--bs-primary);
+            border: 2px var(--bs-primary-border-subtle) solid;
+        }
     </style>
 {% endblock %}
 {% block title %}Books{% endblock %}
 {% block body %}
-    <h1>Books</h1>
-    <div align="center">
+    <h1>Books</h1>l
+    <div class="books">
     {% for i in books %}
-        <h3>{{ i.book_name }}</h3>
-        <img src="/page/{{i.id}}/0" alt="" srcset="">
-        <a href="/read/{{i.id}}">go</a>
-    {% endfor %}
+        <div class="book">
+            <h2 style="font-family: 'Fredericka the Great', serif;" align="center">{{ i.book_name }}</h2>
+            <img src="/page/{{i.id}}/0" alt="" srcset=""> <br>
+            <button align="center" onclick="window.location.href='/read/{{i.id}}'">Read</button> <button>Download</button>
+        </div>
+            {% endfor %}
     </div>
 {% endblock %}
