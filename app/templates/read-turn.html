@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            border: border-box;
+        }
+        body{
+            background-color: powderblue;
+        }
+        #flipbook .shadow,
+#flipbook.shadow{
+  -webkit-box-shadow: 0 4px 10px #666;
+  -moz-box-shadow: 0 4px 10px #666;
+  -ms-box-shadow: 0 4px 10px #666;
+  -o-box-shadow: 0 4px 10px #666;
+  box-shadow: 0 4px 10px #666;
+}
+    </style>
+    <script src="{{ url_for('static', filename='js/turnjs4/extras/jquery.min.1.7.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/turnjs4/lib/turn.min.js') }}"></script>
+
+    <title>{{ book.book_name }}</title>
+</head>
+<body>
+    <div align="center">
+        <h1>Book Name : {{ book.book_name }}</h1>
+        <h2> Author Name : {{ book.author }} </h2>
+        <h4>{{ book.description }}</h4>
+    </div>
+    <div align="center" id="flipbook">
+        <img class="hard" src="/page/{{ book.id }}/1" alt="">
+        {% for i in range(1, book.page) %}
+            <img src="/page/{{ book.id }}/{{ i }}" alt="">
+        {% endfor %}
+        <div class="hard"></div>
+        <div class="hard"></div>
+    </div>
+    <script defer>
+        $("#flipbook").turn({
+            width: 400,
+            height: 300,
+            autoCenter: true
+        });
+    </script>
+</body>
+</html>

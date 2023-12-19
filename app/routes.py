@@ -71,7 +71,7 @@ def page(id, page):
 @app.route('/read/<id>')
 def read(id):
     book = Books.query.filter_by(id=id).with_entities(Books.id ,Books.book_name, Books.author, Books.page).first_or_404()
-    return render_template("read2.html", book=book)
+    return render_template("read-turn.html", book=book)
 
 
 @app.route('/book/edit/<id>')
